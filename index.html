@@ -103,17 +103,17 @@
           
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
-         var canvas2 = document.getElementById('myCanvas2');
+         var canvas2 = document.getElementById("myCanvas2");
          var context2 = canvas2.getContext("2d");
          
-         var imageData = context.getImageData(0 ,0, 600, 500); {
-         for(int w = 0; w < image.getWidth(); w++) {
-            for(int h = 0; h < image.getHeight(); h++) {
-              image.setRGB(i,j,225);
-           }
-         }
+         var imageData = context.getImageData(0 ,0, 600, 500); 
+         for(var pixel = 0; pixel < data.length; pixel += 4) {
+          data[pixel] = 0;
+          data[pixel+1] = 0;
           
-         context2.putImageData(imageData, 0, 0, 225);
+         }
+        
+         context2.putImageData(imageData, 0, 0);
           
         } // end of img.onload
         
@@ -157,11 +157,11 @@
      
       <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> 
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
-        var canvas2 = document.getElementById('myCanvas2');
+        var canvas2 = document.getElementById("myCanvas2");
         var context2 = canvas2.getContext("2d");
         context2.font = '20pt Calibri';
         context2.fillStyle = "black";
-        context2.fillText("Transformed image will go here", 10, 20);
+        context2.fillText("Processed image will go here", 10, 20);
       </script>
      
     </div><!-- /content -->
