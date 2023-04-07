@@ -103,19 +103,19 @@
           
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
-         var canvas2 = document.getElementById("myCanvas2");
-         var context2 = canvas2.getContext("2d");
+         var canvas2 = document.getElementById("myCanvas2"); //Calls upon the second canvas where the pixel information passed.
+         var context2 = canvas2.getContext("2d"); //Sets the type of canvas, in this case it is 2D.
          
-         var imageData = context.getImageData(0 ,0, 600, 500); 
-         var data = imageData.data;
+         var imageData = context.getImageData(0 ,0, 600, 500); //A new variable is created, that stores the pixel data of the first canvas.
+         var data = imageData.data; //The data variable is passed the object that stores pixel data.
          
-         for(var pixel = 0; pixel < data.length; pixel += 4) {
-          data[pixel] = 0;
-          data[pixel+1] = 0;
+         for(var pixel = 0; pixel < data.length; pixel += 4) { //The array has a for loop through the pixels of the data of the first canvas. The loop is started at 0, increases by increments of 4, and loops until the pixel position is greater than the end.
+          data[pixel] = 0; //As for loop is going through the pixels, the red parameter is set to zero.
+          data[pixel+1] = 0; //As for loop is going through the pixels, the green parameter is set to zero.
           
          }
         
-         context2.putImageData(imageData, 0, 0);
+         context2.putImageData(imageData, 0, 0); //Passes back the updated imageData to the second canvas.
           
         } // end of img.onload
         
@@ -147,7 +147,7 @@
       <div id="messageDisplayArea"></div>
       
       <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
-      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
+      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext("2d");
         context.font = '20pt Calibri';
@@ -158,12 +158,12 @@
      <!--Attempt to add second canvas-->
      
       <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> 
-      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
-        var canvas2 = document.getElementById("myCanvas2");
-        var context2 = canvas2.getContext("2d");
-        context2.font = '20pt Calibri';
+      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
+        var canvas2 = document.getElementById("myCanvas2"); //Passes information to the canvas.
+        var context2 = canvas2.getContext("2d"); //Adjusted the type of canvas, which is 2D.
+        context2.font = '20pt Calibri'; //Font of text.
         context2.fillStyle = "black";
-        context2.fillText("Processed image will go here", 10, 20);
+        context2.fillText("Processed image will go here", 10, 20); //Dimensions of text and word to be drawn.
       </script>
      
     </div><!-- /content -->
