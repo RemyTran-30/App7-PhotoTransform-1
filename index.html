@@ -107,6 +107,8 @@
          var context2 = canvas2.getContext("2d");
          
          var imageData = context.getImageData(0 ,0, 600, 500); 
+         var data = imageData.data;
+         
          for(var pixel = 0; pixel < data.length; pixel += 4) {
           data[pixel] = 0;
           data[pixel+1] = 0;
